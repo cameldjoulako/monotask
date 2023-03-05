@@ -8,7 +8,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Color primaryColor = Color(0xff1A4A57);
+  Color primaryColor = const Color(0xff1A4A57);
+  Color bgColor = const Color(0xffEFF3F3);
   //Color secondaryColor = Color(0xffDDECA2);
   Color textColor = const Color(0xff32637A);
   Widget navItems = Row(
@@ -205,7 +206,7 @@ class _HomePageState extends State<HomePage> {
         title: Padding(
           padding: mobile
               ? const EdgeInsets.only(left: 0)
-              : const EdgeInsets.only(left: 80),
+              : const EdgeInsets.only(left: 80, top: 20, bottom: 10),
           child: Row(
             children: [
               Image.asset(
@@ -226,18 +227,22 @@ class _HomePageState extends State<HomePage> {
           ? Drawer(
               backgroundColor: primaryColor,
               child: Align(
-                  alignment: Alignment.topLeft,
-                  child: ListView(children: mobileNav)))
+                alignment: Alignment.topLeft,
+                child: ListView(children: mobileNav),
+              ),
+            )
           : null,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Container(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
               width: double.infinity,
               color: primaryColor,
               child: Padding(
-                padding: const EdgeInsets.only(top: 150, left: 100),
+                padding:
+                    const EdgeInsets.only(top: 150, left: 100, bottom: 150),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -269,12 +274,317 @@ class _HomePageState extends State<HomePage> {
                       "Regain clarity calmness by getting all those tasks out of \nyour head and onto your to-do list (no matter where you are \nor what device you use).",
                       style: TextStyle(color: Colors.white70),
                     ),
+                    const SizedBox(height: 40),
+                    Row(
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              child: const Icon(
+                                Icons.check,
+                                size: 15,
+                                color: Color(0xff1A4A57),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            const Text(
+                              "Schedule",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(width: 30),
+                        Row(
+                          children: [
+                            Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(100)),
+                              child: const Icon(
+                                Icons.check,
+                                size: 15,
+                                color: Color(0xff1A4A57),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            const Text(
+                              "Schedule",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(width: 30),
+                        Row(
+                          children: [
+                            Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(100)),
+                              child: const Icon(
+                                Icons.check,
+                                size: 15,
+                                color: Color(0xff1A4A57),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            const Text(
+                              "Schedule",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 100),
+                    Row(
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            foregroundColor: const Color(0xff1A4A57),
+                            elevation: 2,
+                            backgroundColor: const Color(0xffDDECA2),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.only(
+                              top: 13,
+                              bottom: 13,
+                              left: 25,
+                              right: 25,
+                            ),
+                            child: Text(
+                              "GET STARTED",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 40),
+                        TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            foregroundColor: Colors.white,
+                            elevation: 2,
+                            backgroundColor: const Color(0xff1A4A57),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.only(
+                              top: 13,
+                              bottom: 13,
+                              left: 25,
+                              right: 25,
+                            ),
+                            child: Text(
+                              "DOWNLOAD APP",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
             ),
-          ),
-        ],
+
+            //deuxieme section
+            Container(
+              color: bgColor,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 80, left: 100),
+                child: Column(
+                  children: [
+                    Row(
+                      children: const [
+                        Text(
+                          "Trusted by over",
+                          style: TextStyle(
+                            fontSize: 17,
+                            color: Color(0xff1A4A57),
+                          ),
+                        ),
+                        SizedBox(width: 4),
+                        Text(
+                          "200k client",
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xff1A4A57),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 80),
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/feedly.png',
+                          width: 220,
+                        ),
+                        const SizedBox(width: 36),
+                        Image.asset(
+                          'assets/embedly.png',
+                          width: 220,
+                        ),
+                        const SizedBox(width: 35),
+                        Image.asset(
+                          'assets/basekit.png',
+                          width: 220,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 100),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: ((MediaQuery.of(context).size.width) / 2) - 50,
+                          child: Row(
+                            children: [],
+                          ),
+                        ),
+                        SizedBox(
+                          width: ((MediaQuery.of(context).size.width) / 2) - 50,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Organize\neverything\nin live",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 80,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                              const SizedBox(height: 30),
+                              const Text(
+                                "Whether there is a work-related task or a personal\ngoal, Mono-Task is here to help you manage all our\nto-dos",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              const SizedBox(height: 30),
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        height: 20,
+                                        width: 20,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                        ),
+                                        child: const Icon(
+                                          Icons.check,
+                                          size: 15,
+                                          color: Color(0xff1A4A57),
+                                        ),
+                                      ),
+                                      const Text(
+                                        "Get reminded anytime, anywhere",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          color: Color(0xff1A4A57),
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 15),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        height: 20,
+                                        width: 20,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                        ),
+                                        child: const Icon(
+                                          Icons.check,
+                                          size: 15,
+                                          color: Color(0xff1A4A57),
+                                        ),
+                                      ),
+                                      const Text(
+                                        "Get reminded anytime, anywhere",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          color: Color(0xff1A4A57),
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 15),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        height: 20,
+                                        width: 20,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                        ),
+                                        child: const Icon(
+                                          Icons.check,
+                                          size: 15,
+                                          color: Color(0xff1A4A57),
+                                        ),
+                                      ),
+                                      const Text(
+                                        "Get reminded anytime, anywhere",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          color: Color(0xff1A4A57),
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
