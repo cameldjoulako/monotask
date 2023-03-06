@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Color primaryColor = const Color(0xff1A4A57);
-  Color bgColor = const Color(0xffEFF3F3);
+  Color bgColor = const Color(0xffEBF0F0);
   //Color secondaryColor = Color(0xffDDECA2);
   Color textColor = const Color(0xff32637A);
   Widget navItems = Row(
@@ -508,6 +508,7 @@ class _HomePageState extends State<HomePage> {
                                           color: Color(0xff1A4A57),
                                         ),
                                       ),
+                                      const SizedBox(width: 10),
                                       const Text(
                                         "Get reminded anytime, anywhere",
                                         style: TextStyle(
@@ -535,6 +536,7 @@ class _HomePageState extends State<HomePage> {
                                           color: Color(0xff1A4A57),
                                         ),
                                       ),
+                                      const SizedBox(width: 10),
                                       const Text(
                                         "Get reminded anytime, anywhere",
                                         style: TextStyle(
@@ -562,6 +564,7 @@ class _HomePageState extends State<HomePage> {
                                           color: Color(0xff1A4A57),
                                         ),
                                       ),
+                                      const SizedBox(width: 10),
                                       const Text(
                                         "Get reminded anytime, anywhere",
                                         style: TextStyle(
