@@ -459,12 +459,52 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SizedBox(height: 100),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
                           width: ((MediaQuery.of(context).size.width) / 2) - 50,
                           child: Row(
-                            children: [],
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(15),
+                                width: 350,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(1),
+                                ),
+                                child: Column(children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text(
+                                        "Task",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      Row(
+                                        children: const [
+                                          Icon(
+                                            Icons.add,
+                                            size: 15,
+                                          ),
+                                          Text("Add task"),
+                                        ],
+                                      )
+                                    ],
+                                  )
+                                ]),
+                              ),
+                              Image.asset(
+                                "assets/fleche.png",
+                                width: 200,
+                                height: 400,
+                              )
+                            ],
                           ),
                         ),
                         SizedBox(
