@@ -493,7 +493,14 @@ class _HomePageState extends State<HomePage> {
                                             Icons.add,
                                             size: 15,
                                           ),
-                                          Text("Add task"),
+                                          Text(
+                                            "Add task",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
                                         ],
                                       )
                                     ],
@@ -522,7 +529,7 @@ class _HomePageState extends State<HomePage> {
                                               "MON",
                                               style: TextStyle(
                                                 color: Colors.white,
-                                                fontSize: 13,
+                                                fontSize: 14,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
@@ -531,7 +538,7 @@ class _HomePageState extends State<HomePage> {
                                               "07/12",
                                               style: TextStyle(
                                                 color: Colors.grey,
-                                                fontSize: 9,
+                                                fontSize: 10,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
@@ -548,7 +555,7 @@ class _HomePageState extends State<HomePage> {
                                             "TUE",
                                             style: TextStyle(
                                               color: Color(0xff1A4A57),
-                                              fontSize: 13,
+                                              fontSize: 14,
                                               fontWeight: FontWeight.w800,
                                             ),
                                           ),
@@ -557,8 +564,83 @@ class _HomePageState extends State<HomePage> {
                                             "08/12",
                                             style: TextStyle(
                                               color: Color(0xff1A4A57),
-                                              fontSize: 9,
-                                              fontWeight: FontWeight.bold,
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w900,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: const [
+                                          Text(
+                                            "WED",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                            "10/12",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w900,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: const [
+                                          Text(
+                                            "THU",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                            "12/12",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w900,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: const [
+                                          Text(
+                                            "FRI",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                            "13/12",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w900,
                                             ),
                                           ),
                                         ],
