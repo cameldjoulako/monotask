@@ -200,6 +200,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     mobile = MediaQuery.of(context).size.width > 600 ? false : true;
+    final mobile800 = MediaQuery.of(context).size.width > 800 ? false : true;
 
     return Scaffold(
       appBar: AppBar(
@@ -247,27 +248,19 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          "Millions Tasks",
+                    LayoutBuilder(
+                      builder:
+                          (BuildContext context, BoxConstraints constraints) {
+                        double fontSize = constraints.maxWidth > 600 ? 65 : 30;
+                        return Text(
+                          "Millions Tasks\nin MonoTasks",
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 65,
+                            fontSize: fontSize,
                             fontWeight: FontWeight.w900,
                           ),
-                        ),
-                        Text(
-                          "in MonoTasks",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 65,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ],
+                        );
+                      },
                     ),
                     const SizedBox(height: 20),
                     const Text(
@@ -415,7 +408,9 @@ class _HomePageState extends State<HomePage> {
             Container(
               color: bgColor,
               child: Padding(
-                padding: const EdgeInsets.only(top: 80, left: 100),
+                padding: mobile800
+                    ? const EdgeInsets.all(30)
+                    : const EdgeInsets.only(top: 80, left: 100),
                 child: Column(
                   children: [
                     Row(
@@ -439,23 +434,50 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                     const SizedBox(height: 80),
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/feedly.png',
-                          width: 220,
-                        ),
-                        const SizedBox(width: 36),
-                        Image.asset(
-                          'assets/embedly.png',
-                          width: 220,
-                        ),
-                        const SizedBox(width: 35),
-                        Image.asset(
-                          'assets/basekit.png',
-                          width: 220,
-                        ),
-                      ],
+                    LayoutBuilder(
+                      builder:
+                          (BuildContext context, BoxConstraints constraints) {
+                        double maxWidth = constraints.maxWidth;
+                        if (maxWidth < 700) {
+                          return Column(
+                            children: [
+                              Image.asset(
+                                'assets/feedly.png',
+                                width: 100,
+                              ),
+                              const SizedBox(height: 36),
+                              Image.asset(
+                                'assets/embedly.png',
+                                width: 110,
+                              ),
+                              const SizedBox(height: 35),
+                              Image.asset(
+                                'assets/basekit.png',
+                                width: 110,
+                              ),
+                            ],
+                          );
+                        } else {
+                          return Row(
+                            children: [
+                              Image.asset(
+                                'assets/feedly.png',
+                                width: 220,
+                              ),
+                              const SizedBox(width: 36),
+                              Image.asset(
+                                'assets/embedly.png',
+                                width: 220,
+                              ),
+                              const SizedBox(width: 35),
+                              Image.asset(
+                                'assets/basekit.png',
+                                width: 220,
+                              ),
+                            ],
+                          );
+                        }
+                      },
                     ),
                     const SizedBox(height: 100),
                     Row(
@@ -908,13 +930,20 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(
-                                "Organize\neverything\nin live",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 80,
-                                  fontWeight: FontWeight.w900,
-                                ),
+                              LayoutBuilder(
+                                builder: (BuildContext context,
+                                    BoxConstraints constraints) {
+                                  double titleFontSize =
+                                      constraints.maxWidth > 600 ? 80 : 40;
+                                  return Text(
+                                    "Organize\neverything\nin live",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: titleFontSize,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  );
+                                },
                               ),
                               const SizedBox(height: 30),
                               const Text(
