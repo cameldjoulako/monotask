@@ -469,6 +469,7 @@ class _HomePageState extends State<HomePage> {
                               Container(
                                 padding: const EdgeInsets.all(15),
                                 width: 350,
+                                //height: 900,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(1),
@@ -496,7 +497,74 @@ class _HomePageState extends State<HomePage> {
                                         ],
                                       )
                                     ],
-                                  )
+                                  ),
+                                  const SizedBox(height: 15),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.all(10),
+                                        width: 55,
+                                        height: 55,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xff1A4A57),
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                        ),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: const [
+                                            Text(
+                                              "MON",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(height: 5),
+                                            Text(
+                                              "07/12",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 9,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: const [
+                                          Text(
+                                            "TUE",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                            "08/12",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 9,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ]),
                               ),
                               Image.asset(
