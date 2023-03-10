@@ -416,7 +416,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            //deuxieme section
+            /* SECTION 2 */
             Container(
               color: bgColor,
               child: Padding(
@@ -445,12 +445,15 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 80),
+                    if (mobile1000)
+                      const SizedBox(height: 45)
+                    else
+                      const SizedBox(height: 80),
                     LayoutBuilder(
                       builder:
                           (BuildContext context, BoxConstraints constraints) {
                         double maxWidth = constraints.maxWidth;
-                        if (maxWidth < 800) {
+                        if (maxWidth < 1000) {
                           return Column(
                             children: [
                               Image.asset(
@@ -491,6 +494,7 @@ class _HomePageState extends State<HomePage> {
                         }
                       },
                     ),
+                    /*FIN SECTION CLIENTS */
                     const SizedBox(height: 100),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
