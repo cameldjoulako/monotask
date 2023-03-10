@@ -182,32 +182,19 @@ class _HomePageState extends State<HomePage> {
     )
   ];
 
-  List<Widget> loginRegister = [
-    Padding(
-      padding: const EdgeInsets.only(right: 50.0),
-      child: Row(
-        children: const [
-          Text("LOGIN / REGISTER"),
-          SizedBox(width: 8),
-          Icon(Icons.arrow_forward_sharp),
-        ],
-      ),
-    ),
-  ];
-
   bool mobile = false;
 
   @override
   Widget build(BuildContext context) {
-    mobile = MediaQuery.of(context).size.width > 600 ? false : true;
-    final mobile800 = MediaQuery.of(context).size.width > 800 ? false : true;
+    mobile = MediaQuery.of(context).size.width > 1000 ? false : true;
+    final mobile1000 = MediaQuery.of(context).size.width > 1000 ? false : true;
 
     return Scaffold(
       appBar: AppBar(
         title: Padding(
           padding: mobile
               ? const EdgeInsets.only(left: 0)
-              : const EdgeInsets.only(left: 80, top: 20, bottom: 10),
+              : const EdgeInsets.only(left: 80, top: 20, bottom: 10, right: 80),
           child: Row(
             children: [
               Image.asset(
@@ -218,11 +205,30 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(width: 10),
               const Text("Mono Task"),
               if (mobile) const Text("") else const SizedBox(width: 50),
-              if (mobile) const Text("") else navItems,
+              if (mobile)
+                const Text("")
+              else
+                Expanded(
+                  //width: double.infinity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      navItems,
+                      if (!mobile)
+                        Row(
+                          children: const [
+                            Text("LOGIN / REGISTER"),
+                            SizedBox(width: 8),
+                            Icon(Icons.arrow_forward_sharp),
+                          ],
+                        ),
+                    ],
+                  ),
+                ),
             ],
           ),
         ),
-        actions: mobile ? null : loginRegister,
+        //actions: mobile ? null : loginRegister,
       ),
       drawer: mobile
           ? Drawer(
@@ -242,8 +248,14 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               color: primaryColor,
               child: Padding(
-                padding:
-                    const EdgeInsets.only(top: 150, left: 100, bottom: 150),
+                padding: EdgeInsets.only(
+                  top:
+                      MediaQuery.of(context).size.shortestSide < 600 ? 50 : 150,
+                  left:
+                      MediaQuery.of(context).size.shortestSide < 600 ? 33 : 100,
+                  bottom:
+                      MediaQuery.of(context).size.shortestSide < 600 ? 50 : 150,
+                ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -408,7 +420,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               color: bgColor,
               child: Padding(
-                padding: mobile800
+                padding: mobile1000
                     ? const EdgeInsets.all(30)
                     : const EdgeInsets.only(top: 80, left: 100),
                 child: Column(
@@ -438,7 +450,7 @@ class _HomePageState extends State<HomePage> {
                       builder:
                           (BuildContext context, BoxConstraints constraints) {
                         double maxWidth = constraints.maxWidth;
-                        if (maxWidth < 700) {
+                        if (maxWidth < 800) {
                           return Column(
                             children: [
                               Image.asset(
