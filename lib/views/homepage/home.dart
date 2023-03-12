@@ -209,7 +209,6 @@ class _HomePageState extends State<HomePage> {
                 const Text("")
               else
                 Expanded(
-                  //width: double.infinity,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -808,7 +807,6 @@ class _HomePageState extends State<HomePage> {
                                                 fontWeight: FontWeight.w900,
                                               ),
                                             ),
-                                            //const SizedBox(width: 25),
                                             const Text(
                                               "Finish to build App",
                                               style: TextStyle(
@@ -818,7 +816,6 @@ class _HomePageState extends State<HomePage> {
                                                     TextDecoration.lineThrough,
                                               ),
                                             ),
-                                            //const SizedBox(width: 80),
                                             Container(
                                               height: 20,
                                               width: 20,
@@ -1275,8 +1272,7 @@ class _HomePageState extends State<HomePage> {
                                                           ],
                                                         ),
                                                         const SizedBox(
-                                                          height: 15,
-                                                        ),
+                                                            height: 15),
                                                         const SizedBox(
                                                           height: 15,
                                                         ),
@@ -1403,60 +1399,53 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   /** bloc begin */
 
-                                  SizedBox(
+                                  Container(
                                     width:
                                         ((MediaQuery.of(context).size.width) /
                                                 2) -
                                             200,
-                                    child: Expanded(
-                                      child: Container(
-                                        //width: 5000,
-                                        padding: const EdgeInsets.all(15),
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(1),
-                                        ),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              padding: const EdgeInsets.all(15),
-                                              decoration: BoxDecoration(
-                                                color: const Color(0xffD7E7A0),
-                                                borderRadius:
-                                                    BorderRadius.circular(1),
+                                    padding: const EdgeInsets.all(15),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(1),
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          padding: const EdgeInsets.all(15),
+                                          decoration: BoxDecoration(
+                                            color: const Color(0xffD7E7A0),
+                                            borderRadius:
+                                                BorderRadius.circular(1),
+                                          ),
+                                          child: Row(
+                                            children: const [
+                                              Text(
+                                                "11:00",
+                                                style: TextStyle(
+                                                  color: Color(0xff1A4A57),
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w900,
+                                                ),
                                               ),
-                                              child: Row(
-                                                children: const [
-                                                  Text(
-                                                    "11:00",
-                                                    style: TextStyle(
-                                                      color: Color(0xff1A4A57),
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.w900,
-                                                    ),
-                                                  ),
-                                                  SizedBox(width: 20),
-                                                  Text(
-                                                    "Read Book",
-                                                    style: TextStyle(
-                                                      color: Colors.grey,
-                                                      fontSize: 15,
-                                                      decoration: TextDecoration
-                                                          .lineThrough,
-                                                    ),
-                                                  ),
-                                                ],
+                                              SizedBox(width: 20),
+                                              Text(
+                                                "Read Book",
+                                                style: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 15,
+                                                  decoration: TextDecoration
+                                                      .lineThrough,
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
+                                      ],
                                     ),
                                   ),
                                   /** bloc end */
