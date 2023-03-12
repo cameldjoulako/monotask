@@ -177,7 +177,10 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(color: Colors.white),
         ),
         SizedBox(width: 5),
-        Icon(Icons.arrow_forward_sharp),
+        Icon(
+          Icons.arrow_forward_sharp,
+          color: Colors.white,
+        ),
       ]),
     )
   ];
