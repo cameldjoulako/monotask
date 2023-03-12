@@ -428,6 +428,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
                           "Trusted by over",
