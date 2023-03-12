@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:monotask/widgets/task_desk.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -187,8 +186,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    mobile = MediaQuery.of(context).size.width > 1000 ? false : true;
-    final mobile1000 = MediaQuery.of(context).size.width > 1000 ? false : true;
+    mobile = MediaQuery.of(context).size.width > 1200 ? false : true;
+    final mobile1200 = MediaQuery.of(context).size.width > 1200 ? false : true;
 
     return Scaffold(
       appBar: AppBar(
@@ -421,7 +420,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               color: bgColor,
               child: Padding(
-                padding: mobile1000
+                padding: mobile1200
                     ? const EdgeInsets.all(30)
                     : const EdgeInsets.only(top: 80, left: 100),
                 child: Column(
@@ -446,7 +445,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                    if (mobile1000)
+                    if (mobile1200)
                       const SizedBox(height: 45)
                     else
                       const SizedBox(height: 80),
@@ -455,7 +454,7 @@ class _HomePageState extends State<HomePage> {
                       builder:
                           (BuildContext context, BoxConstraints constraints) {
                         double maxWidth = constraints.maxWidth;
-                        if (maxWidth < 1000) {
+                        if (maxWidth < 1200) {
                           return Column(
                             children: [
                               Image.asset(
@@ -500,9 +499,464 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 100),
                     LayoutBuilder(
                       builder: (context, constraints) {
-                        if (constraints.maxWidth < 800) {
+                        if (constraints.maxWidth < 1200) {
                           // taille de l'écran pour mobile
-                          return const Text("Mobile"); // affichage pour mobile
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Text(
+                                "Organize\neverything\nin live",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                              const SizedBox(height: 30),
+                              const Text(
+                                "Whether there is a work-related task or a personal\ngoal, Mono-Task is here to help you manage all our\nto-dos",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              const SizedBox(height: 30),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 20,
+                                    width: 20,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(100),
+                                    ),
+                                    child: const Icon(
+                                      Icons.check,
+                                      size: 15,
+                                      color: Color(0xff1A4A57),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  const Text(
+                                    "Get reminded anytime, anywhere",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Color(0xff1A4A57),
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 15),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 20,
+                                    width: 20,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(100),
+                                    ),
+                                    child: const Icon(
+                                      Icons.check,
+                                      size: 15,
+                                      color: Color(0xff1A4A57),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  const Text(
+                                    "Get reminded anytime, anywhere",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Color(0xff1A4A57),
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 15),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: 20,
+                                    width: 20,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(100),
+                                    ),
+                                    child: const Icon(
+                                      Icons.check,
+                                      size: 15,
+                                      color: Color(0xff1A4A57),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  const Text(
+                                    "Get reminded anytime, anywhere",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Color(0xff1A4A57),
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                              const SizedBox(
+                                height: 55,
+                              ),
+                              //task date and hour mobile
+                              Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text(
+                                        "Task",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      Row(
+                                        children: const [
+                                          Icon(
+                                            Icons.add,
+                                            size: 15,
+                                          ),
+                                          Text(
+                                            "Add task",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(height: 15),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.all(10),
+                                        width: 55,
+                                        height: 55,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xff1A4A57),
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                        ),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: const [
+                                            Text(
+                                              "MON",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(height: 5),
+                                            Text(
+                                              "07/12",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: const [
+                                          Text(
+                                            "TUE",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                            "08/12",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w900,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: const [
+                                          Text(
+                                            "WED",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                            "10/12",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w900,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: const [
+                                          Text(
+                                            "THU",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                            "12/12",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w900,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: const [
+                                          Text(
+                                            "FRI",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w800,
+                                            ),
+                                          ),
+                                          SizedBox(height: 5),
+                                          Text(
+                                            "13/12",
+                                            style: TextStyle(
+                                              color: Color(0xff1A4A57),
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w900,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 15),
+                                  Container(
+                                    padding: const EdgeInsets.all(15),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xffE3E9EB),
+                                      borderRadius: BorderRadius.circular(1),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            const Text(
+                                              "08:00",
+                                              style: TextStyle(
+                                                color: Color(0xff1A4A57),
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w900,
+                                              ),
+                                            ),
+                                            //const SizedBox(width: 25),
+                                            const Text(
+                                              "Finish to build App",
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 15,
+                                                decoration:
+                                                    TextDecoration.lineThrough,
+                                              ),
+                                            ),
+                                            //const SizedBox(width: 80),
+                                            Container(
+                                              height: 20,
+                                              width: 20,
+                                              decoration: BoxDecoration(
+                                                color: const Color(0xff1A4A57),
+                                                borderRadius:
+                                                    BorderRadius.circular(100),
+                                              ),
+                                              child: const Icon(
+                                                Icons.check,
+                                                size: 15,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(
+                                          height: 15,
+                                        ),
+                                        const Text(
+                                          "Complete the flow of\nadd book and payments\nusing local banks",
+                                          style: TextStyle(
+                                            color: Color(0xff1A4A57),
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(height: 15),
+                                  Container(
+                                    padding: const EdgeInsets.all(15),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xffE3E9EB),
+                                      borderRadius: BorderRadius.circular(1),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        const Text(
+                                          "09:30",
+                                          style: TextStyle(
+                                            color: Color(0xff1A4A57),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w900,
+                                          ),
+                                        ),
+                                        const SizedBox(width: 20),
+                                        const Text(
+                                          "Continous exploration",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 15,
+                                            decoration:
+                                                TextDecoration.lineThrough,
+                                          ),
+                                        ),
+                                        const SizedBox(width: 60),
+                                        Container(
+                                          height: 20,
+                                          width: 20,
+                                          decoration: BoxDecoration(
+                                            color: const Color(0xff1A4A57),
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                          ),
+                                          child: const Icon(
+                                            Icons.check,
+                                            size: 15,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(height: 15),
+                                  Container(
+                                    padding: const EdgeInsets.all(15),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xffD7E7A0),
+                                      borderRadius: BorderRadius.circular(1),
+                                    ),
+                                    child: Row(
+                                      children: const [
+                                        Text(
+                                          "10:00",
+                                          style: TextStyle(
+                                            color: Color(0xff1A4A57),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w900,
+                                          ),
+                                        ),
+                                        SizedBox(width: 20),
+                                        Text(
+                                          "Workout",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 15,
+                                            decoration:
+                                                TextDecoration.lineThrough,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(height: 15),
+                                  Container(
+                                    padding: const EdgeInsets.all(15),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xffD7E7A0),
+                                      borderRadius: BorderRadius.circular(1),
+                                    ),
+                                    child: Row(
+                                      children: const [
+                                        Text(
+                                          "11:00",
+                                          style: TextStyle(
+                                            color: Color(0xff1A4A57),
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w900,
+                                          ),
+                                        ),
+                                        SizedBox(width: 20),
+                                        Text(
+                                          "Read Book",
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 15,
+                                            decoration:
+                                                TextDecoration.lineThrough,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ); // fin affichage pour mobile
                         } else {
                           // affichage pour grand écran
                           return Row(
@@ -1138,6 +1592,9 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                     /**FIN SECTION TASK */
+                    const SizedBox(
+                      height: 50,
+                    ),
                   ],
                 ),
               ),
