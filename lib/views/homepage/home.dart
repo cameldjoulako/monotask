@@ -10,7 +10,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Color primaryColor = const Color(0xff1A4A57);
   Color bgColor = const Color(0xffEBF0F0);
-  //Color secondaryColor = Color(0xffDDECA2);
   Color textColor = const Color(0xff32637A);
   Widget navItems = Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -230,7 +229,6 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        //actions: mobile ? null : loginRegister,
       ),
       drawer: mobile
           ? Drawer(
@@ -428,7 +426,9 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: mobile
+                          ? MainAxisAlignment.center
+                          : MainAxisAlignment.start,
                       children: const [
                         Text(
                           "Trusted by over",
