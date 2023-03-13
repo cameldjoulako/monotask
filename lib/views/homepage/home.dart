@@ -499,6 +499,7 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                     /*FIN SECTION CLIENTS */
+
                     const SizedBox(height: 100),
                     LayoutBuilder(
                       builder: (context, constraints) {
@@ -612,6 +613,7 @@ class _HomePageState extends State<HomePage> {
                               const SizedBox(
                                 height: 55,
                               ),
+
                               //task date and hour mobile
                               Column(
                                 mainAxisAlignment:
