@@ -1457,6 +1457,7 @@ class _HomePageState extends State<HomePage> {
                                   /** bloc end */
                                 ],
                               ),
+                              //Contenu gauche deuxieme section a L4ACCUEIL
                               SizedBox(
                                 width:
                                     ((MediaQuery.of(context).size.width) / 2) -
